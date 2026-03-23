@@ -117,6 +117,7 @@ export default function ResetPasswordForm() {
           backgroundColor: 'var(--color-primary)',
           opacity: loading || success ? 0.6 : 1,
         }}
+      >
         {loading ? 'Updating...' : 'Update password'}
       </button>
 

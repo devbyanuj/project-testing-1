@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signUp } from '@/services/auth.service'
 import type { SignupFormData } from '@/types/auth'
+import { applyTheme } from '@/components/ThemeProvider'
 
 export default function SignupForm() {
   const router = useRouter()
@@ -179,7 +180,7 @@ export default function SignupForm() {
 
       <p className="text-sm text-center transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
         Already have an account?{' '}
-        <a href="/login" style={{ color: currentTheme.colors.primary }} className="font-semibold hover:underline">
+        <a href="/login" style={{ color: 'var(--color-primary)' }} className="font-semibold hover:underline">
           Log in
         </a>
       </p>

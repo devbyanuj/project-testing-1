@@ -203,8 +203,7 @@ export function FloatingMenu() {
             className="w-full flex items-center gap-3 px-4 py-2.5 transition-colors duration-200"
             style={{
               color: 'var(--color-text)',
-              backgroundColor: isDark ? 'transparent' : 'transparent',
-              ':hover': { backgroundColor: isDark ? 'rgba(50, 142, 110, 0.1)' : 'rgba(176, 235, 180, 0.2)' }
+              backgroundColor: isDark ? 'transparent' : 'transparent'
             }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = isDark ? 'rgba(50, 142, 110, 0.1)' : 'rgba(176, 235, 180, 0.2)'}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}

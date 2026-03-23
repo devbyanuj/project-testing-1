@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+:root {
+  /* Default Light Theme - will be overridden by ThemeProvider */
+  --color-primary: #328E6E;
+  --color-primary-hover: #27755A;
+  --color-primary-active: #1E5C46;
+  --color-secondary: #67AE6E;
+  --color-secondary-hover: #57988E;
+  --color-secondary-active: #47825D;
+  
+  --gradient-start: #328E6E;
+  --gradient-mid: #67AE6E;
+  --gradient-end: #90C67C;
+  --gradient-light: #BFF6C3;
+  
+  --color-error: #D94F4F;
+  --color-success: #328E6E;
+  --color-warning: #D97706;
+  
+  --color-text: #0F2318;
+  --color-text-secondary: #3D5A47;
+  --color-text-light: #6B8A74;
+  
+  --color-bg: #FFFFFF;
+  --color-surface: #F7FDF8;
+  --color-surface-secondary: #EDFBEE;
+  
+  --color-border: #B0EBB4;
+  --color-border-light: #E0FBE2;
+  
+  --input-bg: #FFFFFF;
+  --input-border: #ACE1AF;
+  --input-placeholder: #6B8A74;
+}
+
+html.dark {
+  /* Dark Mode Theme - will be set by ThemeProvider */
+  --color-primary: #67AE6E;
+  --color-primary-hover: #57988E;
+  --color-primary-active: #47825D;
+  --color-secondary: #90C67C;
+  --color-secondary-hover: #7EB56A;
+  --color-secondary-active: #6CA45A;
+  
+  --gradient-start: #1E5C46;
+  --gradient-mid: #328E6E;
+  --gradient-end: #67AE6E;
+  --gradient-light: #90C67C;
+  
+  --color-error: #FF6B6B;
+  --color-success: #51CF66;
+  --color-warning: #FFD43B;
+  
+  --color-text: #E0FEE5;
+  --color-text-secondary: #B0D4B8;
+  --color-text-light: #7FA88C;
+  
+  --color-bg: #0D1C15;
+  --color-surface: #1A2F25;
+  --color-surface-secondary: #234335;
+  
+  --color-border: #328E6E;
+  --color-border-light: #1E5C46;
+  
+  --input-bg: #0F2318;
+  --input-border: #328E6E;
+  --input-placeholder: #6B8A74;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================================
+   BUTTON STYLES WITH HOVER & CLICK EFFECTS
+   ============================================ */
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg font-medium text-white;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(50, 142, 110, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 12px rgba(50, 142, 110, 0.4);
+}
+
+.btn-primary:active {
+  background-color: var(--color-primary-active);
+  box-shadow: 0 1px 4px rgba(50, 142, 110, 0.2);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg font-medium;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(50, 142, 110, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+  box-shadow: 0 4px 12px rgba(162, 203, 139, 0.3);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-secondary-active);
+  box-shadow: 0 1px 4px rgba(162, 203, 139, 0.15);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-error {
+  @apply px-4 py-2 rounded-lg font-medium text-white;
+  background-color: var(--color-error);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-error:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-error:active {
+  background-color: #b91c1c;
+  box-shadow: 0 1px 4px rgba(239, 68, 68, 0.2);
+}
+
+.btn-success {
+  @apply px-4 py-2 rounded-lg font-medium text-white;
+  background-color: var(--color-success);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+  background-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.btn-success:active {
+  background-color: #047857;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.2);
+}
+
+/* ============================================
+   INPUT FIELD STYLES
+   ============================================ */
+
+.input-field {
+  @apply w-full px-3 py-2 rounded-lg border transition-all duration-200;
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--color-text);
+}
+
+.input-field::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(132, 177, 121, 0.1);
+}
+
+.input-field:hover:not(:focus) {
+  border-color: var(--color-secondary);
+}
+
+.input-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-surface-secondary);
+}
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   ICON STYLES
+   ============================================ */
+
+.icon {
+  @apply transition-all duration-200;
+}
+
+.icon-primary {
+  color: var(--color-primary);
+}
+
+.icon-secondary {
+  color: var(--color-secondary);
+}
+
+.icon-error {
+  color: var(--color-error);
+}
+
+.icon-success {
+  color: var(--color-success);
+}
+
+/* ============================================
+   TEXT STYLES
+   ============================================ */
+
+.text-primary {
+  color: var(--color-text);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
+  background-attachment: fixed;
+}
+
+.gradient-light {
+  background: linear-gradient(135deg, var(--gradient-mid) 0%, var(--gradient-light) 100%);
+}
+
+/* ============================================
+   GLASS MORPHISM
+   ============================================ */
+
+.glass {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  @apply transition-all duration-200;
+}
+
+html.dark .glass {
+  background-color: rgba(26, 26, 26, 0.8);
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background-color: rgba(26, 26, 26, 0.8);
+    border-color: rgba(132, 177, 121, 0.2);
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.bg-primary-light {
+  background-color: rgba(132, 177, 121, 0.1);
+}
+
+.bg-secondary-light {
+  background-color: rgba(162, 203, 139, 0.1);
+}
+
+.shadow-primary {
+  box-shadow: 0 4px 12px rgba(132, 177, 121, 0.15);
+}
+
+.shadow-secondary {
+  box-shadow: 0 4px 12px rgba(162, 203, 139, 0.15);
+}

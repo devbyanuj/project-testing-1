@@ -2,70 +2,70 @@
 
 :root {
   /* Default Light Theme - will be overridden by ThemeProvider */
-  --color-primary: #328E6E;
-  --color-primary-hover: #27755A;
-  --color-primary-active: #1E5C46;
-  --color-secondary: #67AE6E;
-  --color-secondary-hover: #57988E;
-  --color-secondary-active: #47825D;
-  
-  --gradient-start: #328E6E;
-  --gradient-mid: #67AE6E;
-  --gradient-end: #90C67C;
-  --gradient-light: #BFF6C3;
-  
-  --color-error: #D94F4F;
-  --color-success: #328E6E;
-  --color-warning: #D97706;
-  
-  --color-text: #0F2318;
-  --color-text-secondary: #3D5A47;
-  --color-text-light: #6B8A74;
-  
-  --color-bg: #FFFFFF;
-  --color-surface: #F7FDF8;
-  --color-surface-secondary: #EDFBEE;
-  
-  --color-border: #B0EBB4;
-  --color-border-light: #E0FBE2;
-  
-  --input-bg: #FFFFFF;
-  --input-border: #ACE1AF;
-  --input-placeholder: #6B8A74;
+  --color-primary: #328e6e;
+  --color-primary-hover: #27755a;
+  --color-primary-active: #1e5c46;
+  --color-secondary: #67ae6e;
+  --color-secondary-hover: #57988e;
+  --color-secondary-active: #47825d;
+
+  --gradient-start: #328e6e;
+  --gradient-mid: #67ae6e;
+  --gradient-end: #90c67c;
+  --gradient-light: #bff6c3;
+
+  --color-error: #d94f4f;
+  --color-success: #328e6e;
+  --color-warning: #d97706;
+
+  --color-text: #0f2318;
+  --color-text-secondary: #3d5a47;
+  --color-text-light: #6b8a74;
+
+  --color-bg: #ffffff;
+  --color-surface: #f7fdf8;
+  --color-surface-secondary: #edfbee;
+
+  --color-border: #b0ebb4;
+  --color-border-light: #e0fbe2;
+
+  --input-bg: #ffffff;
+  --input-border: #ace1af;
+  --input-placeholder: #6b8a74;
 }
 
 html.dark {
   /* Dark Mode Theme - will be set by ThemeProvider */
-  --color-primary: #67AE6E;
-  --color-primary-hover: #57988E;
-  --color-primary-active: #47825D;
-  --color-secondary: #90C67C;
-  --color-secondary-hover: #7EB56A;
-  --color-secondary-active: #6CA45A;
-  
-  --gradient-start: #1E5C46;
-  --gradient-mid: #328E6E;
-  --gradient-end: #67AE6E;
-  --gradient-light: #90C67C;
-  
-  --color-error: #FF6B6B;
-  --color-success: #51CF66;
-  --color-warning: #FFD43B;
-  
-  --color-text: #E0FEE5;
-  --color-text-secondary: #B0D4B8;
-  --color-text-light: #7FA88C;
-  
-  --color-bg: #0D1C15;
-  --color-surface: #1A2F25;
+  --color-primary: #67ae6e;
+  --color-primary-hover: #57988e;
+  --color-primary-active: #47825d;
+  --color-secondary: #90c67c;
+  --color-secondary-hover: #7eb56a;
+  --color-secondary-active: #6ca45a;
+
+  --gradient-start: #1e5c46;
+  --gradient-mid: #328e6e;
+  --gradient-end: #67ae6e;
+  --gradient-light: #90c67c;
+
+  --color-error: #ff6b6b;
+  --color-success: #51cf66;
+  --color-warning: #ffd43b;
+
+  --color-text: #e0fee5;
+  --color-text-secondary: #b0d4b8;
+  --color-text-light: #7fa88c;
+
+  --color-bg: #0d1c15;
+  --color-surface: #1a2f25;
   --color-surface-secondary: #234335;
-  
-  --color-border: #328E6E;
-  --color-border-light: #1E5C46;
-  
-  --input-bg: #0F2318;
-  --input-border: #328E6E;
-  --input-placeholder: #6B8A74;
+
+  --color-border: #328e6e;
+  --color-border-light: #1e5c46;
+
+  --input-bg: #0f2318;
+  --input-border: #328e6e;
+  --input-placeholder: #6b8a74;
 }
 
 /* Smooth transitions for theme changes */
@@ -258,12 +258,21 @@ textarea.input-field {
    ============================================ */
 
 .gradient-bg {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start) 0%,
+    var(--gradient-mid) 50%,
+    var(--gradient-end) 100%
+  );
   background-attachment: fixed;
 }
 
 .gradient-light {
-  background: linear-gradient(135deg, var(--gradient-mid) 0%, var(--gradient-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--gradient-mid) 0%,
+    var(--gradient-light) 100%
+  );
 }
 
 /* ============================================
